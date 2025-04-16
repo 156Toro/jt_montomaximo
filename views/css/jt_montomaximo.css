@@ -1,0 +1,60 @@
+/* Alerta principal */
+.jt-max-amount-alert {
+    margin: 15px 0;
+    padding: 15px;
+    border-left: 5px solid #d9534f;
+    background: #fdf7f7;
+    animation: jt-alert-pulse 0.5s;
+}
+
+.jt-max-amount-alert i.icon-warning-sign {
+    margin-right: 8px;
+    color: #d9534f;
+}
+
+/* Modal de error */
+.jt-max-error-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+
+.jt-max-error-content {
+    background: white;
+    padding: 25px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: jt-alert-pulse 0.5s;
+}
+
+.jt-max-error-content h4 {
+    color: #d9534f;
+    margin-top: 0;
+}
+
+/* Animaciones */
+@keyframes jt-alert-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estado de error en el body */
+body.jt-max-error {
+    overflow: hidden;
+}
