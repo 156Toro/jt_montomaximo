@@ -3,16 +3,15 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-// El nombre de la clase DEBE coincidir exactamente con el nombre del archivo (sin .php)
 class jt_montomaximo extends Module
 {
     const MAX_AMOUNT = 500000;
 
     public function __construct()
     {
-        $this->name = 'jt_montomaximo'; // Debe coincidir con el nombre de la carpeta
+        $this->name = 'jt_montomaximo'; 
         $this->tab = 'front_office_features';
-        $this->version = '1.0.0'; // ¡Este campo es obligatorio!
+        $this->version = '1.0.0'; 
         $this->author = 'Jorge Toro (Steward 2025)';
         $this->need_instance = 0;
         $this->bootstrap = true;
@@ -55,34 +54,7 @@ class jt_montomaximo extends Module
             ]
         );
     }
-
-    /*
-    public function hookActionFrontControllerSetMedia($params)
-    {
-        // Registrar JavaScript en controllers específicos
-        if (in_array($this->context->controller->php_self, ['cart', 'order'])) {
-            $this->context->controller->registerJavascript(
-                'module-jt_montomaximo-js',
-                'modules/'.$this->name.'/views/js/jt_montomaximo.js',
-                [
-                    'position' => 'bottom',
-                    'priority' => 200,
-                    'attributes' => 'defer'
-                ]
-            );
-            
-            // Pasar variables a JavaScript
-            Media::addJsDef([
-                'jt_montomaximo' => [
-                    'max_amount' => self::MAX_AMOUNT,
-                    'currency_format' => $this->context->currency->format,
-                    'alert_message' => $this->l('El pedido máximo permitido es de $500.000 CLP')
-                ]
-            ]);
-        }
-    }
-
-    */
+   
 
     public function hookActionCartUpdateQuantityBefore($params)
     {
